@@ -35,10 +35,28 @@ h1,h2,h3,h4,h5,h6{
     width: 100%;
     height: 100vh;
 
-    background: url("../images/bg3.jpeg");
+    background: url("../images/cover_landing.png");
     background-repeat: no-repeat;
     background-size: cover;
+    position: relative;
 }
+
+.intro::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6); /* Adjust the transparency here */
+    z-index: 1; /* Ensure the overlay stays behind the content */
+}
+
+.intro > * {
+    position: relative;
+    z-index: 2; /* Ensure the content stays above the overlay */
+}
+
 
 .intro__suptitle{
     font-size: 30px;
